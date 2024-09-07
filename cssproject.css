@@ -1,0 +1,234 @@
+/* Remove a cor de fundo do corpo */
+body {
+    font-family: "Chakra Petch", sans-serif; /* Define a fonte padrão */
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    height: 100vh; /* Preenche a altura total da viewport */
+    margin: 0;
+    padding: 0;
+    position: relative; /* Necessário para posicionar o vídeo */
+    overflow: hidden; /* Remove barras de rolagem se o conteúdo ultrapassar */
+}
+
+/* Estiliza o vídeo de fundo */
+#video-background {
+    position: fixed; /* Fixa o vídeo na tela */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Largura da viewport */
+    height: 100vh; /* Altura da viewport */
+    object-fit: cover; /* Ajusta o vídeo para cobrir toda a área */
+    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+}
+
+/* Estiliza o header */
+header {
+    z-index: 1; /* Garante que o header esteja acima do vídeo */
+    margin-bottom: 2rem; /* Espaçamento abaixo do header */
+}
+
+/* Estiliza os títulos h1 */
+h1 {
+    font-size: 2.5rem; /* Tamanho da fonte */
+    color: #FFFFFF; /* Cor do texto para contraste com o vídeo */
+    text-align: center; /* Alinha o texto ao centro */
+    letter-spacing: 0.4rem; /* Espaçamento entre letras */
+    margin-bottom: 2rem; /* Espaçamento abaixo do título */
+}
+
+/* Estiliza as seções da página */
+section {
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: row; /* Alinha os itens na horizontal */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 1rem; /* Espaçamento entre o input e o botão */
+    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+    z-index: 1; /* Garante que as seções estejam acima do vídeo */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Estiliza os inputs dentro das seções */
+section input {
+    width: 30rem; /* Largura dos inputs */
+    border: none; /* Remove a borda padrão */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 1.5rem; /* Borda arredondada */
+    color: #ffffff; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    background: rgba(112, 111, 111, 0.3); /* Fundo branco transparente */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    outline: none; /* Remove o contorno ao focar no input */
+}
+
+/* Estiliza os botões dentro das seções */
+section button {
+    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 1.5rem; /* Borda arredondada */
+    background: rgba(112, 111, 111, 0.3); /* Fundo branco transparente */
+    color: #F5F7F8; /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    outline: none; /* Remove o contorno ao focar no botão */
+    margin-left: 1rem; /* Adiciona um espaçamento entre o input e o botão */
+}
+
+/* Estiliza o botão quando o mouse está sobre ele */
+section button:hover {
+    background: rgba(255, 255, 255, 0.5); /* Fundo branco transparente mais opaco */
+}
+
+/* Estiliza a caixa de resultados da pesquisa */
+.resultados-pesquisa {
+    width: 80%; /* Ajusta a largura da caixa de resultados */
+    max-width: 1200px; /* Largura máxima para manter o design organizado */
+    height: 46vh; /* Define uma altura fixa para permitir a rolagem */
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo for maior que a altura */
+    margin: 2rem auto; /* Espaçamento em relação ao topo e ao centro horizontalmente */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 0.6rem; /* Borda arredondada */
+    display: flex; /* Usa Flexbox para layout */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se não houver espaço suficiente */
+    gap: 1rem; /* Espaçamento entre os itens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve para destacar a caixa */
+    overflow: hidden; /* Remove a rolagem */
+}
+
+
+/* Estiliza cada item de resultado (planetas) */
+.item-resultado {
+    background: rgba(255, 255, 255, 0.3); /* Fundo branco com 80% de opacidade */
+    border-radius: 1.6rem; /* Borda arredondada */
+    padding: 1rem; /* Espaçamento interno */
+    width: calc(50% - 1rem); /* Largura dos itens para exibir dois itens por linha */
+    min-height: 370px; /* Altura mínima para garantir um tamanho maior */
+    max-height: 300px; /* Altura máxima para permitir rolagem */
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo for maior que a altura */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
+    display: flex; /* Usa Flexbox para layout interno */
+    flex-direction: column; /* Alinha os itens na vertical */
+    width: auto;
+    height: auto;
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estiliza as imagens dentro dos itens de resultado */
+.item-resultado img {
+    width: 80%; /* Ajusta a largura da imagem para caber bem no item */
+    max-width: 250px; /* Define uma largura máxima */
+    height: auto;
+    border-radius: 0.6rem;
+    object-fit: cover;
+    margin: 0 auto 1rem; /* Centraliza horizontalmente e adiciona margem abaixo */
+}
+
+
+
+
+/* Estiliza os títulos dentro dos itens de resultado */
+.item-resultado h2 {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: #222831; /* Cor do texto */
+    margin-bottom: 0.5rem; /* Espaçamento abaixo do título */
+}
+
+/* Estiliza os links dentro dos itens de resultado */
+.item-resultado a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: #011c36; /* Cor do texto dos links */
+}
+
+/* Estiliza os links quando são passados o mouse sobre */
+.item-resultado a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estiliza a descrição meta dentro dos itens de resultado */
+.descricao-meta {
+    color: #ffffff; /* Cor do texto */
+    margin: 0.5rem 0; /* Margem acima e abaixo */
+}
+
+/* Estilo para os links "Saiba Mais" */
+.saiba-mais {
+    display: inline-block; /* Garante que o botão tenha comportamento de bloco em linha */
+    padding: 0.8rem 1.5rem; /* Ajuste o tamanho do botão */
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    color: #fff; /* Cor do texto do botão */
+    background-color: #007bff; /* Cor de fundo do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 0.5rem; /* Borda arredondada */
+    text-decoration: none; /* Remove o sublinhado do link */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 1rem; /* Espaçamento acima do botão */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+/* Estilo para mensagens de erro */
+.mensagem-erro {
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Oculta o texto que ultrapassa o contêiner */
+    text-overflow: ellipsis; /* Adiciona reticências se o texto for muito longo */
+    background-color: rgba(255, 255, 255, 0.3); 
+    color: #ffffff; /* Cor do texto para contraste */
+    border: 1px solid #000000; /* Borda para destacar a mensagem */
+    border-radius: 0.25rem; /* Borda arredondada */
+    padding: 0.5rem; /* Adiciona preenchimento para melhor visualização */
+    margin: 1rem 0; /* Adiciona margem para espaçamento */
+    font-size: 1rem; /* Tamanho da fonte para adequar o texto */
+}
+
+/* Efeito de digitação */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgba(255, 255, 255, 0.75); }
+}
+
+.saudacoes {
+    overflow: hidden; /* Esconde o texto que ultrapassa o contêiner */
+    white-space: nowrap; /* Impede a quebra de linha */
+    border-right: 0.15em solid rgba(240, 240, 240, 0.75); /* Cursor de digitação */
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite; /* Animações de digitação e cursor */
+    font-size: 4.5rem; /* Tamanho da fonte */
+    color: #FFFFFF; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-bottom: 1rem; /* Espaçamento abaixo do título */
+    font-family: "Space Mono", monospace;
+}
+
+/* Estilo para o parágrafo */
+header p {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: #F5F7F8; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 0px; /* Remove a margem superior padrão */
+    margin-bottom: 2rem; /* Espaçamento abaixo do parágrafo */
+}
+
+h2{
+    color: rgb(255, 255, 255);
+}
+
+/* Efeito de digitação para a mensagem de erro (sem caixa) */
+@keyframes typing-erro {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.mensagem-erro {
+    overflow: hidden; /* Esconde o texto que ultrapassa o contêiner */
+    white-space: nowrap; /* Impede a quebra de linha */
+    animation: typing-erro 3s steps(40, end); /* Animação de digitação */
+    font-size: 1.5rem; /* Tamanho da fonte */
+    color: #ffffff; /* Cor texto para a mensagem de erro */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 1rem; /* Espaçamento superior */
+}

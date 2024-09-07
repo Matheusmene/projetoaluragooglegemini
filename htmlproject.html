@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Fonte do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="cssproject.css">
+
+    <title>Sistema Solar</title>
+</head>
+<body>
+
+    <!-- Vídeo de fundo com autoplay e loop -->
+    <video autoplay muted loop id="video-background">
+        <source src="stars-space-moewalls-com_3840x2160.mp4" type="video/mp4">
+    </video>
+
+    <!-- Cabeçalho com o título e a descrição -->
+    <header>
+        <h1 class="saudacoes">Saudações, Terráqueos!</h1>
+        <p>Descubra curiosidades dos Planetas do sistema solar</p>
+        <h2>Ordem dos Planetas: Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno.</h2>
+    </header>
+    
+    <main>
+        <!-- Campo de pesquisa e botão -->
+        <section>
+            <input type="text" placeholder="Digite o nome do Planeta" id="campo-pesquisa">
+            <button id="botao-pesquisar" onclick="pesquisar()">Pesquisar</button>
+        </section>
+
+        <!-- Seção onde os resultados da pesquisa serão exibidos -->
+        <section class="resultados-pesquisa" id="resultados-pesquisa">
+        </section>
+    </main>
+
+    <!-- Script com os dados dos planetas e a funcionalidade de pesquisa -->
+    <script src="dadosproject.js"></script>
+    <script src="javascriptproject.js"></script>
+
+    <script>
+        // Permite pesquisar ao pressionar o botão "Pesquisar"
+        document.getElementById('botao-pesquisar').addEventListener('click', pesquisar);
+
+        // Adiciona um evento ao campo de pesquisa para ativar a busca com a tecla "Enter"
+        document.getElementById('campo-pesquisa').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                pesquisar(); // Chama a função pesquisar se "Enter" for pressionado
+            }
+        });
+    </script>
+</body>
+</html>
+
